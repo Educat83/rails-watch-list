@@ -1,0 +1,13 @@
+<h1>Show list</h1>
+
+<%# <%= render partial: 'movies/movie', locals: { list: @list }  %>
+
+<div class="container">
+  <% @list.bookmarks.each do |list| %>
+    <div>
+      <ul>
+        <li><%= link_to list.movie.title, movie_path(list) %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>

@@ -1,10 +1,10 @@
-<h1>My lists of movies</h1>
+<h1>My lists genres</h1>
 
 <div class="container">
-  <% @lists.each do |movie| %>
+  <% @lists.each do |list| %>
     <div>
       <ul>
-        <li><%= movie.name %></li>
+        <li><%= link_to list.name, list_path(list) %></li>
       </ul>
     </div>
   <% end %>
