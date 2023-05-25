@@ -1,0 +1,11 @@
+<h1>My lists of movies</h1>
+
+<div class="container">
+  <% @lists.each do |movie| %>
+    <div>
+      <ul>
+        <li><%= movie.name %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
