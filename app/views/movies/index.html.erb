@@ -1,0 +1,11 @@
+<h1>This is movies index</h1>
+
+<div class="container">
+  <% @movies.each do |movie| %>
+    <div>
+      <ul>
+        <li><%= movie.title %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
