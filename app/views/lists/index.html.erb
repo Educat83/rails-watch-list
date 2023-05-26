@@ -1,11 +1,18 @@
 <h1>My lists of movies</h1>
 
 <div class="container">
-  <%= link_to 'Create a new list', new_list_path %>
+  <%= link_to 'Create a new list' , new_list_path , class: "btn btn-small btn-success"%>
   <% @lists.each do |list| %>
     <div>
       <ul>
-        <li><%= link_to list.name, list_path(list) %></li>
+        <li><div class="card-product">
+              <img src="<%= list.bookmarks[0].movie.poster_url %>"/>
+              <div class="card-product-infos">
+                <h2><%= link_to list.name, list_path(list), class: "btn btn-small btn-primary" %></h2>
+              <p>Product description with <strong>relevant info</strong> only.</p>
+              </div>
+            </div>
+
       </ul>
     </div>
   <% end %>
