@@ -1,6 +1,7 @@
-<h1>My lists genres</h1>
+<h1>My lists of movies</h1>
 
 <div class="container">
+  <%= link_to 'Create a new list', new_list_path %>
   <% @lists.each do |list| %>
     <div>
       <ul>

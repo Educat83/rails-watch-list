@@ -1,13 +1,14 @@
-<h1>Show list</h1>
+<h1><%= @list.name %></h1>
 
-<%# <%= render partial: 'movies/movie', locals: { list: @list }  %>
-
-<div class="container">
-  <% @list.bookmarks.each do |list| %>
-    <div>
-      <ul>
-        <li><%= link_to list.movie.title, movie_path(list) %></li>
-      </ul>
-    </div>
-  <% end %>
+<%= link_to "Add a Movie", new_list_bookmark_path(@list) %>
+<div>
+<ul>
+    <% @list.bookmarks.each do |bookmark| %>
+        <li>
+            <%= bookmark.movie.title %> <%= link_to "🗑", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{bookmark.movie.title} from #{@list.name}?"} %>
+           <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>" >
+        </li>
+    <% end %>
+</ul>
+<%= link_to 'Back to lists', lists_path %>
 </div>
